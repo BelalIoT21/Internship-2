@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Stock Level Monitor</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script src="htmlScript.js"></script>
+    <!-- Importerar anpassad JavaScript-fil -->
+  </head>  
+  <body>
+    <div class="v1_3">
+      <span class="v1_5">Stock Level Monitor</span>
+      <div class="v1_4"></div>
+      <div class="v1_216"></div>
+      <span class="v1_217">Stock Level: <span id="message" style="font-weight: bold;">0</span><span style="font-weight: bold;"> m</span></span>
+    </div>
+    <!-- container för rubriken och lagernivån -->
+
+    <div id="AlertMessage" class="AlertMessage">
+        <div class="WarningSign">&#9888;</div>
+        <div class="Warning">Warning!</div>
+        <div class="WarningMessage">The stock level is over 2 meter. Please move it.</div>
+        <button id="closeButton" class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- Knapp för att avvisa varningen -->
+
+        <audio id="alarmSound" src="alarm.mp3" autoplay></audio>
+        <!-- Ljudfil för att spela larmljudet -->
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-size: 14px;
+      background-size: cover;
+      min-height: 100vh;
+      min-height: 1000px;
+      overflow: hidden;
+    }
+    .v1_3 {
+      width: 100%;
+      height: 10000px;
+      background: rgba(30,30,30,1);
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      overflow: hidden;
+    }
+    .v1_4 {
+      width: 773px;
+      height: 239px;
+      background: rgb(4, 207, 229);
+      opacity: 0.9900000095367432;
+      position: absolute;
+      top: 249px;
+      left: 450px;
+      border-top-left-radius: 35px;
+      border-top-right-radius: 35px;
+      border-bottom-left-radius: 35px;
+      border-bottom-right-radius: 35px;
+      overflow: hidden;
+    }
+    .v1_5 {
+      width: 637px;
+      color: rgb(4, 207, 229);
+      position: absolute;
+      top: 35px;
+      left: 510px;
+      font-family: Inter;
+      font-weight: Regular;
+      font-size: 64px;
+      opacity: 1;
+      text-align: center;
+    }
+    .v1_216 {
+      width: 730px;
+      height: 202px;
+      background: rgba(255,255,255,1);
+      opacity: 1;
+      position: absolute;
+      top: 267px;
+      left: 470px;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      overflow: hidden;
+    }
+    .v1_217 {
+      width: 637px;
+      color: rgb(0, 0, 0);
+      position: absolute;
+      top: 330px;
+      left: 500px;
+      font-family: Inter;
+      font-weight: Bolder;
+      font-size: 64px;
+      opacity: 1;
+      text-align: center;
+    }
+    .AlertMessage {
+      width: 350px;
+      height: 250px;
+      display: none;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 20px;
+      z-index: 100;
+      border: 5px solid rgb(249, 4, 45);
+    }
+    .WarningSign {
+      font-size: 75px;
+      width: 0px;
+      height: 100px;
+      color: black;
+      position: absolute;
+      left: 135px;
+      top: -5px;
+    }
+    .Warning {
+      text-align: center;
+      margin-top: 70px;
+      font-weight: bold;
+      font-size: 45px;
+    }
+    .WarningMessage {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .close-button {
+    font-size: 1.65rem;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0.6rem;
+  }
+  </style>
