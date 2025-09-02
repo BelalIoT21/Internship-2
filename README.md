@@ -113,6 +113,3 @@ License not specified. All rights reserved.
 *   The project uses jQuery for simplified DOM manipulation.
 *   Inspiration from various online tutorials and examples for WebSocket communication.
 *   The `alarm.mp3` file may be subject to separate licensing terms.  Please check its origin for details.
-
----
-**Note:** This README.md is based on the provided files and information.  A complete and functional application would require a working server-side component with WebSocket implementation, proper error handling, and a robust mechanism for configuring alert thresholds.
